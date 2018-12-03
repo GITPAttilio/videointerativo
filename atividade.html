@@ -1,0 +1,151 @@
+<html>
+	<head>
+	<meta charset="utf-8">
+	
+	<title> the legende of link </title>
+	<link href="assets/CSS/style.css" rel="stylesheet" />
+	</head>
+
+	<body>
+
+		
+
+		<DIV class = "BTBOX">
+		<button  onclick="jumpUp()" id="up" class="up"></button>
+		<button onclick="jumpDown()" id="down" class="down"></button>
+		<button  onclick="jumpLeft()" id="left" class="left"></button>
+		<button onclick="jumpRight()" id="right" class="right"></button>
+		</DIV>
+
+		<button onclick="Play()" id="demo" class="icon"></button>
+		<div id="game">
+			<video width="640" height="480" autoplay="0" id="vid">
+				<source src="assets\Vídeo\VIDEO.mp4" type="video/mp4" />
+			</video>
+		</div>
+
+
+		<script type="text/javascript">
+			var video = document.getElementById("vid");
+			var butn = document.getElementById("demo");
+
+			var up = document.getElementById("up");
+			var down = document.getElementById("down");
+			var left = document.getElementById("left");
+			var right = document.getElementById("right");
+
+			var pausedTime = 0;
+			
+			butn.style.background = "url(assets/Image/Icon.png)";
+
+			up.style.background = "url(assets/Image/cima.png)";
+			down.style.background = "url(assets/Image/abaixo.png)";
+			left.style.background = "url(assets/Image/esquerda.png)";
+			right.style.background = "url(assets/Image/direita.png)";
+
+			function Play() {
+				if(video.paused){
+					video.play();
+					butn.style.background = "url(assets/Image/Icon.png) no-repeat";
+				}
+			}
+			
+			
+ 
+			video.addEventListener("timeupdate", function(){
+    				if(this.currentTime >= 18 && this.currentTime <= 18.3) {
+        				this.pause();
+        				pausedTime = this.currentTime;
+      				}
+
+      				if(this.currentTime >= 34 && this.currentTime <= 34.5) {
+        				this.pause();
+        				pausedTime = this.currentTime;
+      				}
+
+      				if(this.currentTime >= 49 && this.currentTime <= 49.5) {
+        				this.pause();
+        				pausedTime = this.currentTime;
+      				}
+
+      				if(this.currentTime >= 61 && this.currentTime <= 61.5) {
+        				this.pause();
+        				pausedTime = this.currentTime;
+      				}
+
+      				if(this.currentTime >= 71.2 && this.currentTime <= 71.3) {
+        				this.pause();
+        				pausedTime = this.currentTime;
+        				alert("You Win - THX for playing");
+      				}
+
+      				if(this.currentTime >= 80 && this.currentTime <= 80.3) {
+        				this.pause();
+        				pausedTime = this.currentTime;
+        				alert("You Lose - THX for playing");
+      				}
+
+
+				});
+
+
+				function jumpLeft(){
+    					if (pausedTime >= 18 && pausedTime <= 18.3){
+    						video.currentTime = 73;
+    						video.play();
+    						}
+
+    					else if (pausedTime >= 61 && pausedTime <= 61.3){
+							video.currentTime = 73;
+    						video.play();
+
+    					}
+
+    					else if (pausedTime >= 34 && pausedTime <= 34.5){
+    						video.currentTime = 34.7;
+    						video.play();
+    					}
+
+    					else if(pausedTime >= 49 && pausedTime <= 49.5){
+    						video.currentTime = 49.7;
+    						video.play();
+    					}
+
+				}
+
+				function jumpUp(){
+    					if (pausedTime >= 18 && pausedTime <= 18.3){
+    						video.currentTime = 18.5;
+    						video.play();
+    						}
+
+    					else if (pausedTime >= 61 && pausedTime <= 61.5){
+							video.currentTime = 61.7;
+    						video.play();
+
+    					}
+
+    					else if (pausedTime >= 34 && pausedTime <= 34.5 || pausedTime >= 49 && pausedTime <= 49.5){
+    						video.currentTime = 73;
+    						video.play();
+    					}
+				}
+
+				function jumpDown(){
+    					if (pausedTime >= 18 && pausedTime <= 18.3||pausedTime >= 34 && pausedTime <= 34.5 || pausedTime >= 49 && pausedTime <= 49.5 || pausedTime >= 61 && pausedTime <= 61.5){
+    						video.currentTime = 73;
+    						video.play();
+    					}
+				}
+
+				function jumpRight(){
+    					if (pausedTime >= 18 && pausedTime <= 18.3||pausedTime >= 34 && pausedTime <= 34.5 || pausedTime >= 49 && pausedTime <= 49.5 || pausedTime >= 61 && pausedTime <= 61.5){
+    						video.currentTime = 73;
+    						video.play();
+    					}
+				}
+
+		</script>
+
+	</body>
+</html>

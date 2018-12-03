@@ -1,0 +1,45 @@
+#game{
+	position: absolute;
+	top: 25%;
+    left: 27.5%;
+	width: 	640px;
+	height: 480px;
+}
+body{
+	background-image: url(background.jpg);
+	background-repeat: no-repeat;
+}
+
+.icon{
+	top: 40%;
+	position: absolute;
+	border: none;
+	left: 9.5%;
+	width: 115px;
+	height: 220px;
+}
+
+.BTBOX{
+	top: 20%;
+	position: absolute;
+	border: none;
+	left: 45%;
+}
+
+.up{
+	width: 26px;
+	height: 26px;
+}
+
+.down{
+	width: 26px;
+	height: 26px;
+}
+.left{
+	width: 26px;
+	height: 26px;
+}
+.right{
+		width: 26px;
+	height: 26px;
+}
